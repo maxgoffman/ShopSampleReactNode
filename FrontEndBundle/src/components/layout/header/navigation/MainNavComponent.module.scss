@@ -1,0 +1,31 @@
+@import "../../../../styles/_variables";
+@import "../../../../styles/_mixins";
+
+@include navbar-style($gray-almost-black);
+
+.nav-link {
+  @include colored-font-props($almost-pure-white, $monserrat-semibold-font, $size-semibold-font);
+  text-decoration: none;
+  &:visited, &:hover, &:active, &:focus {
+    color: $fucsia;
+    text-decoration: none;
+  }
+}
+  
+.navbarbrandstyle {
+  @include colored-font-props($fucsia, $monserrat-reg-font, $size-brand-font, bold);
+  &:visited {
+    color: $fucsia;
+  }
+  &:hover {
+    color: $almost-pure-white;
+  }
+  &:active {
+    color: $fucsia !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .navbarbrandstyle {
+    font-size: $size-normal;
+  }
+}

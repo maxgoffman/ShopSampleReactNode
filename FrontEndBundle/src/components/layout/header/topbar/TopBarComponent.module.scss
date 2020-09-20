@@ -1,0 +1,81 @@
+@import "../../../../styles/_variables";
+@import "../../../../styles/_mixins";
+
+@include navbar-style($almost-pure-white);
+
+.nav-link {
+  @include colored-font-props($gray-almost-black, $opensans-font, $size-normal);
+  &:hover, &:active {
+    color: $fucsia;
+  } 
+}
+
+.fucsiatextcolor {
+  @include colored-font-props($fucsia, $opensans-font, $size-normal);
+  text-decoration: none;
+  &:hover {
+    color: $fucsia;
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.usermenulink, .dropdownbutton {
+  @extend %user-bar-link-button;
+}
+
+.bottomline {
+  hr {
+    margin: 0.25rem -0.75rem;
+    border-top: solid transparent;
+  }
+  &:hover hr {
+    border-top: solid $fucsia;
+  }
+}
+
+.dropdownmenu {
+  min-width: 0;
+  button:active {
+    background-color: transparent;
+    color: $gray-almost-black;
+    outline: 0;
+  }
+}
+
+li {
+  @include colored-font-props($gray-almost-black, $opensans-font, $size-normal);
+}
+
+.baglink {
+  @include colored-font-props($gray-almost-black, $opensans-font, $size-normal);
+  text-decoration: none;
+  &:hover, &:active {
+    color: $gray-almost-black;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  li {
+    font-size: $size-very-small !important;
+    button {
+      font-size: $size-very-small !important;
+    }
+    a {
+      font-size: $size-very-small !important;
+    }
+  }
+  ul {
+    max-width: 50%;
+    li a span {
+      font-size: $size-very-small !important;
+    }
+  }
+}
+
+.facebook-button {
+  border: none;
+}

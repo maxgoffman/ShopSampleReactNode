@@ -1,0 +1,19 @@
+@import "../../../styles/_variables";
+@import "../../../styles/_mixins";
+
+.modalstyle h1 {
+    @include colored-font-props($gray-almost-black, $monserrat-reg-font, $size-extra-large);
+}
+
+.nooutline, .nooutline:hover, .closeoutline:active, .closeoutline:focus {
+    outline: 0;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    vertical-align: top;
+}
+
+.roundedborders {
+    border-radius: 1.5rem;
+}

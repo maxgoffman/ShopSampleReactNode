@@ -1,0 +1,64 @@
+@import "../../../styles/_variables";
+@import "../../../styles/_mixins";
+
+.modalinputfield {
+    @include font-props($monserrat-reg-font, $size-very-small);
+    @include assign-value-to-props((border-top, border-left, border-right), none);
+    @include assign-value-to-props((border-radius, padding-left, padding-right), 0);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.labelmodal {
+    @include colored-font-props($gray-light, $monserrat-reg-font, $size-very-small);
+    position:relative;
+    top: 2.7em;
+}
+
+.modalstyle h1 {
+    @include colored-font-props($gray-almost-black, $monserrat-reg-font, $size-extra-large);
+}
+
+.nooutline, .nooutline:hover, .closeoutline:active, .closeoutline:focus {
+    outline: 0;
+}
+
+.roundedborders {
+    border-radius: 1rem;
+}
+
+.modalsmall {
+    @include colored-font-props($gray-light, $opensans-font, $size-very-small);
+}
+
+.modalbutton {
+    background-color: $fucsia !important;  
+    opacity: 1 !important;
+    @include font-props($opensans-font, $size-very-small);  
+}
+
+.registerlink, .registerlink:hover, .registerlink:active, .registerlink:focus {
+    @include colored-font-props($vivid-cyan, $opensans-font, $size-small);
+    padding: 0;
+    vertical-align: top;
+    border: none;
+}
+
+.registermodalwidth {
+    max-width: 400px;
+}
+
+.loadingheight {
+    @include assign-value-to-props((padding-bottom, padding-top), 40%);
+}
+
+.facebook-button {
+    border-radius: .5rem;
+    background-color: #4c69ba;
+    border-color: rgb(76, 105, 186);
+    text-transform: uppercase;
+    font-family: Helvetica,sans-serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    color:#fff;
+}

@@ -1,0 +1,98 @@
+
+/** 
+  * @desc Application component stylesheet
+  * @author Maximiliano Goffman maxgoffman@gmail.com
+*/
+@import "/styles/_variables";
+@import "/styles/_mixins";
+
+//Fonts used in the app
+@include font-faces($font-faces);
+
+
+//General font Styling, will be overriden if needed in the components
+h2 {
+  @include colored-font-props($gray-almost-black, $monserrat-bold-font, $size-large);
+}
+
+h3 {
+  @include colored-font-props($gray-almost-black, $monserrat-bold-font, $size-normal);
+}
+
+.bodysmall {
+  @include font-props($opensans-font, $size-small);
+}
+
+.bodynormal {
+  @include font-props($opensans-font, $size-normal);
+}
+
+.opensans-bold {
+  @include font-props($opensans-font, $size-normal, bold);
+}
+
+//Removes bootstrap outlining on form controls
+@include placeholder-alignment($placeholder-selectors, left);
+@include input-focus($input-focus-selectors);
+
+/*font-awesome shopping bag product quantity circle*/
+.fa-stack[data-count]:after{
+  position:absolute;
+  left:65%;
+  top:0%;
+  content: attr(data-count);
+  padding:.6em;
+  border-radius:999px;
+  line-height:.75em;
+  text-align:center;
+  min-width:2em;
+  background: $fucsia;
+  border-style:none;
+  @include colored-font-props(white, $opensans-font, $size-smallest, bold);
+}
+
+@media screen and (max-width: 500px) {
+  .fa-stack[data-count]:after{
+    min-width:1em;
+  }
+}
+
+.fa-stack {
+  height: 1em;
+}
+.fa-circle {
+  color:$fucsia;
+}
+
+//Some more general font styles reused in several components
+.fucsia-text-color {
+  color:$fucsia !important;
+}
+
+.gray-text-color{
+  color: $gray-gray !important;
+}
+
+.white-background-color {
+  color: $almost-pure-white !important;
+}
+
+//Common button styling
+.button-back-fucsia-text-white {
+  color: white !important;
+  @include assign-value-to-props((background-color, border-color), $fucsia !important);
+  opacity: 1 !important;
+  border-radius: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  @include assign-value-to-props((-webkit-user-select, -moz-user-select, user-select, outline), none);
+  line-height: 1.5;
+  padding: .375em 1.5em;
+  &:focus {
+      outline:none;
+  }
+}
+
+.button-back-fucsia-text-white-disabled {
+  color: $gray-light !important;
+}

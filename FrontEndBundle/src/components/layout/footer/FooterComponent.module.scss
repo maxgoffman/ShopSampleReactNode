@@ -1,0 +1,21 @@
+@import "../../../styles/_variables";
+@import "../../../styles/_mixins";
+
+@include navbar-style($gray-almost-black);
+
+.nav-link {
+  @include colored-font-props($almost-pure-white, $monserrat-semibold-font, $size-semibold-font);
+  text-decoration: none;
+  &:hover, &:active, &:focus {
+    color: $fucsia;
+    text-decoration: none;
+  }
+}
+
+.footersmall {
+  @include colored-font-props($almost-pure-white, $opensans-font, $size-small); 
+  &:hover, &:active {
+    color: $fucsia;
+    text-decoration: none;
+  }
+}
